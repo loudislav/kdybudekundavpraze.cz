@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kdy bude Kunda v Praze?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+        .datum {
+            font-size: 10rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="datum" id="datum">30. března 2025</h1>
+
+    <script>
+        function aktualizovatDatum() {
+            const dnes = new Date();
+            const cilovyDatum = new Date(2025, 2, 30); // 30. března 2025 (měsíce jsou indexované od 0)
+            const denPredem = new Date(cilovyDatum);
+            denPredem.setDate(denPredem.getDate() - 1);
+            
+            const datumElement = document.getElementById("datum");
+            
+            if (dnes.toDateString() === cilovyDatum.toDateString()) {
+                datumElement.textContent = "Dnes";
+            } else if (dnes.toDateString() === denPredem.toDateString()) {
+                datumElement.textContent = "Zítra";
+            }
+        }
+        
+        aktualizovatDatum();
+    </script>
+</body>
+</html>
