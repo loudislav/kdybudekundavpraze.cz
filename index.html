@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-    <h1 class="datum" id="datum">30. března 2025</h1>
+    <h1 class="datum" id="datum">asi 30. března 2025</h1>
 
     <script>
         function aktualizovatDatum() {
@@ -34,9 +34,9 @@
             const datumElement = document.getElementById("datum");
             
             if (dnes.toDateString() === cilovyDatum.toDateString()) {
-                datumElement.textContent = "Dnes";
+                datumElement.textContent = "asi dnes";
             } else if (dnes.toDateString() === denPredem.toDateString()) {
-                datumElement.textContent = "Zítra";
+                datumElement.textContent = "asi zítra";
             }
         }
         
